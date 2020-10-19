@@ -9,6 +9,10 @@ const articleSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    author: {
+        type: String,
+        required: true,
+    },
     createdAt: {
         type: Date,
         default: new Date(),
@@ -17,3 +21,8 @@ const articleSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Article', articleSchema);
+
+
+
+
+
