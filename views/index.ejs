@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Blog</title>
+</head>
+
+<body>
+    <div class="container pb-4">
+        <h1 class="mb-4 mt-4">MY BLOG</h1>
+        <a href="/new" class="btn btn-success">New Post</a>
+
+        <!-- Foreach function to loop through all posts data -->
+        <% articles.forEach(article => { %>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <%= article.title %>
+                </h4>
+
+                <div class="card-subtitle text-muted mb-2">
+                    <!-- toLocaleDateString is to convert the date format depending on where you are -->
+                    <%= article.createdAt.toLocaleDateString() %>
+                </div>
+
+                <div class="card-text mb-2">
+                    <%= article.description %>
+                </div>
+
+                <a href="/<%= article.id %>" class="btn btn-primary">Read More...</a>
+            </div>
+        </div>
+
+        <% }) %>
+        <!-- End for each -->
+
+    </div>
+</body>
+
+</html>
