@@ -30,6 +30,11 @@
                     <%= article.createdAt.toLocaleDateString() %>
                 </div>
 
+                <div class="card-subtitle text-muted mb-2">
+                    <!-- toLocaleDateString is to convert the date format depending on where you are -->
+                    By <%= article.author %>
+                </div>
+
                 <div class="card-text mb-2">
                     <%= article.description %>
                 </div>
