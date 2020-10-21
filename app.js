@@ -29,6 +29,8 @@ app.use(session({secret: "secret"}));
 app.use('/', require('./routes/index'))
 app.use('/users', require('./routes/users'))
 
+
+// Routes for the blog api
 app.get('/', async (req, res) => {
     const articles = await Article.find().sort({createdAt : 'desc'})
     res.render('index', { articles: articles });
