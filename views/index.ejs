@@ -1,7 +1,8 @@
 <h1 class="mb-4 mt-4">MY BLOG</h1>
 <p class="lead mb-3">Welcome <%= user.name %></p>
-<a href="/new" class="btn btn-success">New Post</a>
 <a href="/users/logout" class="btn btn-secondary">Logout</a>
+<a href="/new" class="btn btn-primary">New Post</a>
+
 
 <!-- Foreach function to loop through all posts data -->
 <% articles.forEach(article => { %>
@@ -13,12 +14,10 @@
         </h4>
 
         <div class="card-subtitle text-muted mb-2">
-            <!-- toLocaleDateString is to convert the date format depending on where you are -->
             <%= article.createdAt.toLocaleDateString() %>
         </div>
 
         <div class="card-subtitle text-muted mb-2">
-            <!-- toLocaleDateString is to convert the date format depending on where you are -->
             By <%= article.author %>
         </div>
 
@@ -26,7 +25,7 @@
             <%= article.description %>
         </div>
 
-        <a href="/<%= article.id %>" class="btn btn-primary">Read More...</a>
+        <a href="/<%= article._id %>" class="btn btn-secondary">Read More</a>
     </div>
 </div>
 

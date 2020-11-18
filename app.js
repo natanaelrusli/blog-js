@@ -12,7 +12,6 @@ const mongoURI = "mongodb+srv://admin:admin@cluster0.5htwy.mongodb.net/user?retr
 // Connect to mongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => console.log('MongoDB Connected'))
-    .catch((err) => console.log(err))
 
 // EJS
 // Make sure calling the express layouts before setting the view engine
@@ -62,11 +61,9 @@ app.post('/save', (req, res) => {
 
     Article.create(article, (err, data) => {
         if (err) {
-            // res.status(500).send(err);
-            res.render('new', {article: article});
+            res.send(err);
         } else {
-            // res.status(201).send(data);
-            res.redirect(`/${article.id}`);
+            res.redirect('/');
         }
     });
 });

@@ -73,7 +73,6 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body
     
     const user = await User.find({email : email});
-    // console.log(user[0].name)
 
     if (typeof user[0] == 'undefined') {
         res.render('login', {error : 'User not found'})
