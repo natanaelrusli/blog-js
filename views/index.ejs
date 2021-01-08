@@ -25,7 +25,8 @@
             <%= article.description %>
         </div>
 
-        <a href="/<%= article._id %>" class="btn btn-secondary">Read More</a>
+        <a href="/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+        <a href="/delete/<%= article.id %>" class="btn btn-danger">Delete</a>
     </div>
 </div>
 
